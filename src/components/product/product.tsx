@@ -19,12 +19,13 @@ export type ITypePropsProduct = IProductProps & {children?: React.ReactNode};
 
 const Product:FC<ITypePropsProduct> = ({id,title,description,price,discountPercentage,rating,stock,brand,category,thumbnail,images}) =>{
     return(
-        <div>
-            <h3>{id}. {title}</h3>
-            <p>{description}</p>
+        <div className={styles.divv}>
+            <h3 >{id}. {title}</h3>
+            <p>Опис - {description}</p>
             <h3>{price} hrn,{discountPercentage}</h3>
-            <p>{rating}, {stock}</p>
-            <h3>{brand},{category},thumbnail</h3>
+            <p>Raiting-{rating}, {stock}</p>
+            <h3>Brand-{brand},Category-{category}</h3>
+            <a href={thumbnail}>Link</a>
             <img className={styles.productimg} src={images[0]} alt={title}/>
         </div>
     )

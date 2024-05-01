@@ -7,7 +7,7 @@ const App = () => {
 
 
     return (
-        <div>
+        <div className="App">
             <Products></Products>
         </div>
     );
