@@ -1,0 +1,18 @@
+.productimg{
+    width: 70vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+}
+.image{
+    width: 200px;
+    height: 100px;
+}
+
+.divv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
