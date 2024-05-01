@@ -26,7 +26,11 @@ const Product:FC<ITypePropsProduct> = ({id,title,description,price,discountPerce
             <p>Raiting-{rating}, {stock}</p>
             <h3>Brand-{brand},Category-{category}</h3>
             <a href={thumbnail}>Link</a>
-            <img className={styles.productimg} src={images[0]} alt={title}/>
+            <ul className={styles.productimg}>
+                {
+                images.map((image,index) => <img className={styles.image} key={index} src={image}/>)
+                }
+            </ul>
         </div>
     )
 }
