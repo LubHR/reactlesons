@@ -14,6 +14,7 @@ const App = () => {
 
     const decrement = () => {
         setCounter(prevState => ({value: prevState.value - 1}))
+
     }
 
     const reset = () =>{
