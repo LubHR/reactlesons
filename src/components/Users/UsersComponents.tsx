@@ -3,7 +3,9 @@ import {UserModels} from "../../models/user";
 import UserComponents from "../User/UserComponents";
 import {getAllUsers} from "../../services/ApiAll";
 
-const UsersComponents: FC = () => {
+type IPropsType = {lift?:(id:number) => void}
+
+const UsersComponents: FC<IPropsType> = ({lift}) => {
 
     const [users, setUsers] = useState<UserModels[]>([])
 
@@ -13,7 +15,7 @@ const UsersComponents: FC = () => {
 
     return (
         <div>
-            {users.map((user) => (<UserComponents user={user} key={user.id}/>))}
+            {users.map((user) => (<UserComponents user={user} key={user.id} lift={lift}/>))}
         </div>
     );
 };

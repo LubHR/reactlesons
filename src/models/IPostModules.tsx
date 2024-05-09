@@ -1,8 +1,6 @@
-export interface PostModel {
+export interface IPostModules {
     id: number,
     title: string,
     body: string,
     userId: number,
-    tags: string[],
-    reactions: number
 }

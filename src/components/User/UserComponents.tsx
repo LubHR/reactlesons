@@ -5,13 +5,22 @@ interface IProps{
     user: UserModels
 }
 
-type IPropsType = IProps & {children?:React.ReactNode}
+type IPropsType = IProps & {children?:React.ReactNode} & {lift?:(id:number) => void};
 
-const UserComponents:FC<IPropsType> = ({user}) => {
+const UserComponents:FC<IPropsType> = ({user,lift }) => {
+
+    const heandler =() =>{
+        if(lift){
+            lift(user.id);
+        }
+    }
+
     return (
         <div>
             {user.id}: {user.firstName} {user.lastName}
             <p>{user.gender}, {user.username}</p>
+            <div><button onClick={heandler}>Post</button></div>
+            <hr/>
         </div>
     );
 };
