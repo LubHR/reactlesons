@@ -1,15 +1,12 @@
-import React, {useEffect} from "react";
+import React from "react";
 import './App.css';
-import {getAllUsers} from "./services/userapi";
+import UsersComponents from "./components/Users/UsersComponents";
 
 const App = () => {
 
-    useEffect(() =>{
-        getAllUsers().then(value => console.log(value.data.users));
-    })
     return (
         <div>
-
+            <UsersComponents/>
         </div>
     );
 };
