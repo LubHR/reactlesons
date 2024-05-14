@@ -1,8 +1,9 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import {useForm} from "react-hook-form";
 import './Style.Api.css'
 import {joiResolver} from "@hookform/resolvers/joi";
 import {validatorPost} from "../resolverPost/validatorPost";
+import {PostUser} from "../models/PostUser";
 
 
 interface IFormProps{
@@ -18,6 +19,8 @@ const FormComponent:FC = () => {
         formState:{errors}
     } = useForm<IFormProps>({mode:"all",resolver: joiResolver(validatorPost)});
 
+    const [postuser, setPostuser] = useState<PostUser | null>( null)
+
     const save = (formValue:IFormProps) => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
@@ -31,7 +34,7 @@ const FormComponent:FC = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => setPostuser(json));
     }
 
     return (
@@ -49,6 +52,8 @@ const FormComponent:FC = () => {
                 <br/>
                 <button>save</button>
             </form>
+
+            {postuser && <h3>{postuser.id}, {postuser.body}, {postuser.title}, {postuser.userId}</h3>}
         </div>
     );
 };
