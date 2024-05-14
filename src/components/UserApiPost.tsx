@@ -1,5 +1,9 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {useForm} from "react-hook-form";
+import './Style.Api.css'
+import {joiResolver} from "@hookform/resolvers/joi";
+import {validatorPost} from "../resolverPost/validatorPost";
+
 
 interface IFormProps{
     title: string,
@@ -7,10 +11,12 @@ interface IFormProps{
     userId: number,
 }
 
-const FormComponent = () => {
+const FormComponent:FC = () => {
 
-    let formObj = useForm<IFormProps>();
-    let {register,handleSubmit} = formObj
+    let {register ,
+        handleSubmit,
+        formState:{errors}
+    } = useForm<IFormProps>({mode:"all",resolver: joiResolver(validatorPost)});
 
     const save = (formValue:IFormProps) => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -29,11 +35,18 @@ const FormComponent = () => {
     }
 
     return (
-        <div>
+        <div className={'baty'}>
+            <h2>PostUserCreate</h2>
             <form onSubmit={handleSubmit(save)}>
                 <input type={'text'} placeholder={'title'} {...register('title')} />
+                {errors.title && <p>{errors.title.message}</p>}
+                <br/>
                 <input type={'text'} placeholder={'body'} {...register('body')}/>
+                {errors.body && <p>{errors.body.message}</p>}
+                <br/>
                 <input type={'number'} placeholder={'userId'} {...register('userId')}/>
+                {errors.userId && <p>{errors.userId.message}</p>}
+                <br/>
                 <button>save</button>
             </form>
         </div>
