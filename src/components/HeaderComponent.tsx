@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import
+import './HeaderCocss.css'
 
 const HeaderComponent = () => {
     return (
@@ -9,10 +9,9 @@ const HeaderComponent = () => {
             <br/>
             <Link to="users">users</Link>
             <br/>
-            <a href={''}>posts</a>
+            <Link to="posts">posts</Link>
             <br/>
-            <a href={''}>comments</a>
-            <hr/>
+            <Link to='comments'>comments</Link>
         </div>
     );
 };
