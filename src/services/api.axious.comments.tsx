@@ -6,7 +6,7 @@ let BaseUrl = axios.create({
     headers:{}
 })
 
-const ApiServiceComments ={
+const ApiServiceComments = {
     getAllComments:async ():Promise<AxiosResponse<ICommentModel[]>> => {
         return BaseUrl.get("/comments");
     }

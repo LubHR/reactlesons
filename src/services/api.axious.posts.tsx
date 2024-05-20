@@ -2,7 +2,7 @@ import axios, {AxiosResponse} from 'axios'
 import {IPostModel} from "../models/IPostModel";
 
 let BaseUrl = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com/',
+    baseURL: 'https://jsonplaceholder.typicode.com',
     headers:{}
 })
 
