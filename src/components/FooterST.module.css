@@ -1,0 +1,11 @@
+.Footer{
+    background-color: aqua;
+}
+a{
+    font-weight: bold;
+}
+
+a:hover{
+    color: brown;
+    transition-duration: 0.5s;
+}

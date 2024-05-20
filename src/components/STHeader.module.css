@@ -1,0 +1,15 @@
+.Header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: aqua;
+}
+a{
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover{
+    color: brown;
+    transition-duration: 0.5s;
+}

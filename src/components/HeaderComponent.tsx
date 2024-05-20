@@ -1,15 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import css from './STHeader.module.css';
 
 const HeaderComponent = () => {
     return (
-        <div>
+        <div className={css.Header}>
             <Link to={'/'}>Home</Link>
-            <hr/>
             <Link to={'users'}>Users</Link>
-            <hr/>
             <Link to={'posts'}>Posts</Link>
-            <hr/>
             <Link to={'comments'}>Comments</Link>
         </div>
     );
