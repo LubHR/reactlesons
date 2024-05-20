@@ -5,7 +5,8 @@ import FooterPageAbout from "../pages/FooterPageAbout";
 const FooterComponent = () => {
     return (
         <div>
-            <FooterPageAbout/>
+            <hr/>
+            <Link to="about">About</Link>
         </div>
     );
 };

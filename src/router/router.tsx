@@ -6,6 +6,7 @@ import UsersPage from "../pages/UsersPage";
 import PostsPage from "../pages/PostsPage";
 import CommentsPage from "../pages/CommentsPage";
 import FooterPageAbout from "../pages/FooterPageAbout";
+import FooterComponent from "../components/FooterComponent";
 
 
 export const routerconfig = createBrowserRouter(
@@ -17,8 +18,8 @@ export const routerconfig = createBrowserRouter(
                         {path:'users',element:<UsersPage/>},
                         {path:'posts',element:<PostsPage/>},
                         {path:'comments',element:<CommentsPage/>},
+                        {path:'about', element:<FooterPageAbout/>}
                 ]},
 
-        {path:'/about',element:<FooterPageAbout/>}
     ]
 )
