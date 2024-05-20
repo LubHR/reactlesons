@@ -10,6 +10,6 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <RouterProvider router={routerconfig}> </RouterProvider>
+    <RouterProvider router={routerconfig}></RouterProvider>
 );
 
