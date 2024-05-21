@@ -15,7 +15,10 @@ export const routerconfig = createBrowserRouter(
                 element:<MainLayout/>,
                 children: [ /*isOutlet*/
                         {index:true,element:<HomePage/>},
-                        {path:'users',element:<UsersPage/>},
+                        {path:'users',element:<UsersPage/>,
+                        children:[
+                            {path: ':id', element: <PostsPage/>}
+                        ]},
                         {path:'posts',element:<PostsPage/>},
                         {path:'comments',element:<CommentsPage/>},
                         {path:'about', element:<FooterPageAbout/>}

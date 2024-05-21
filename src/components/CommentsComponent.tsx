@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ApiServiceComments from "../services/api.axious.comments";
 import {ICommentModel} from "../models/ICommentModel";
+import CommentComponent from "./CommentComponent";
 
 const CommentsComponent = () => {
 
@@ -12,7 +13,7 @@ const CommentsComponent = () => {
 
     return (
         <div>
-            {comment.map(comment => <div key={comment.id}>{comment.id}, Name-{comment.name}, Body-{comment.body}, Email-{comment.email}, PostID-{comment.postId}</div>)}
+            {comment.map(comment => <CommentComponent key={comment.id} comment={comment}/>)}
         </div>
     );
 };
