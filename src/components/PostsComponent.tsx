@@ -3,11 +3,7 @@ import ApiServicePosts from "../services/api.axious.posts";
 import {IPostModel} from "../models/IPostModel";
 import PostComponent from "./PostComponent";
 
-interface IPost {
-    posts: IPostModel[];
-}
-
-const PostsComponent:FC<IPost> = ({posts}) => {
+const PostsComponent:FC = () => {
 
     const [post, setPost] = useState<IPostModel[]>([])
 
@@ -17,7 +13,7 @@ const PostsComponent:FC<IPost> = ({posts}) => {
 
     return (
         <div>
-            {posts.map(post => <PostComponent key={post.id} post={post}/>)}
+            {post.map(post => <PostComponent key={post.id} post={post}/>)}
         </div>
     );
 };

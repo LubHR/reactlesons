@@ -1,8 +1,9 @@
 import axios, {AxiosResponse} from 'axios';
 import {ICommentModel} from "../models/ICommentModel";
+import {baseUrl} from "../constants/BaseUrl";
 
 let BaseUrl = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: baseUrl,
     headers:{}
 })
 

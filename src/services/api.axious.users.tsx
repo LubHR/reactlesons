@@ -13,10 +13,9 @@ const ApiseviceUsers = {
         return BaseUrl.get('/users');
     },
 
-    getPostofUser: (userId:string):Promise<AxiosResponse<IPostModel[]>> => {
+    getPostforUsers : async (userId:string):Promise<AxiosResponse<IPostModel[]>> =>{
         return BaseUrl.get(`/users/${userId}/posts`);
     }
-
 }
 
 export default ApiseviceUsers;
