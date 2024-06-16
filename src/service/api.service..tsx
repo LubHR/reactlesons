@@ -13,7 +13,7 @@ axiosInstance.interceptors.request.use(request =>{
 
     if(localStorage.getItem("tokenPair") && (request.url !== '/auth' && request.url !== '/auth/refresh')) {
         const iTokenObtainPair = retrivelocalStorageData<ITokenObteinPair>('tokenPair');
-        request.headers.set('Authorization', 'Bearer' + iTokenObtainPair.access);
+        request.headers.set('Authorization', 'Bearer ' + iTokenObtainPair.access);
     }
     return request;
 })
@@ -30,7 +30,6 @@ const authService = {
         } catch (e){
             console.log(e)
         }
-
 
         return !!(response?.data?.access && response?.data?.refresh);
     },

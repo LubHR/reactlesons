@@ -8,6 +8,7 @@ const MainLayout = () => {
         <div>
             <HeaderComponent/>
             <Outlet/>
+
         </div>
     );
 };
